@@ -1,0 +1,842 @@
+{
+	"info": {
+		"_postman_id": "241adeed-4753-4ae1-9252-781b0cbc2a92",
+		"name": "LendsqrAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32160534"
+	},
+	"item": [
+		{
+			"name": "bankVerificationBvn",
+			"item": [
+				{
+					"name": "Initialize BVN Consent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contact\": \"09064008150\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/verification/bvn/:bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"verification",
+								"bvn",
+								":bvn"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": "09064008150"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Consent and get BVN Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"623553\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/verification/bvn/:bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"verification",
+								"bvn",
+								":bvn"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Accounts for a BVN",
+			"item": [
+				{
+					"name": "Match Customer BVN Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/verification/bvn/:bvn/selfies",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"verification",
+								"bvn",
+								":bvn",
+								"selfies"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": "09064008150"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Customer Bank Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/verification/bankaccount",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"verification",
+								"bankaccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credit Bureaus",
+			"item": [
+				{
+					"name": "Get Credit Report from CRC Credit Bureau",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/creditbureaus/crc/:bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"creditbureaus",
+								"crc",
+								":bvn"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": "09064008150"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Credit Report from FirstCentral Credit Bureau",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/creditbureaus/firstcentral/:bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"creditbureaus",
+								"firstcentral",
+								":bvn"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": "09064008150"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Decisioning",
+			"item": [
+				{
+					"name": "Get Decision Models",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/decisioning/models",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"decisioning",
+								"models"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Decision Model Details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Embedded Loans and Payments",
+			"item": [
+				{
+					"name": "loan",
+					"item": [
+						{
+							"name": "Get Loan Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Keep-Alive",
+										"value": "timeout=5",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/loans/products",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"loans",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Initialize Loan Application",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pay with wallet",
+					"item": [
+						{
+							"name": "Initialize Payment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/payments/initialize",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"payments",
+										"initialize"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/payments/:reference",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"payments",
+										":reference"
+									],
+									"variable": [
+										{
+											"key": "reference",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Data for Lenders",
+			"item": [
+				{
+					"name": "Options",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/data/options",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"data",
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/data/users",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"data",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operational Services",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Get Wallet",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/profile/wallet",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"profile",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Adjutor Services Pricing",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/profile/pricing",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"profile",
+										"pricing"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Miscellaneous",
+			"item": [
+				{
+					"name": "Get List of Banks",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "https://adjutor.lendsqr.com/v2/status",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Direct Debit",
+			"item": [
+				{
+					"name": "Mandates",
+					"item": [
+						{
+							"name": "Create Mandate",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/direct-debit/mandates",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"direct-debit",
+										"mandates"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Mandates",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/direct-debit/mandates?limit=10&page=1",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"direct-debit",
+										"mandates"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Banks",
+					"item": [
+						{
+							"name": "Verify Bank Account Number",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/direct-debit/banks/account-lookup",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"direct-debit",
+										"banks",
+										"account-lookup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Banks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/direct-debit/banks?limit=100&page=1&sort_dir=ASC",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"direct-debit",
+										"banks"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "sort_dir",
+											"value": "ASC"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Kolo Transaction Data [Beta]",
+			"item": [
+				{
+					"name": "Add Bank Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/kolo/bank-accounts",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"kolo",
+								"bank-accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bank Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "430a3876-6f13-4c2f-ac7c-54099c8e8851",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/kolo/bank-accounts/:id",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"kolo",
+								"bank-accounts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12345"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
